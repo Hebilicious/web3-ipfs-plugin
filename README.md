@@ -1,9 +1,11 @@
 # [Typescript] Web3.js Plugin for IPFS
 
-Upload and register in Contract
+This repository is done as an exercise for an interview with Chainsafe. 
 
 In this repository I will detail my thought process while making this test.
-The finished result according to the spec is defined in another repository.
+This repository will also contains a frontend to be able to run e2e browser tests.
+
+I've created another repository at https://github.com/Hebilicious/ipfs-web3 that forks from the template and follows the requirement without the additional complexity.
 
 ## Setup
 
@@ -99,6 +101,8 @@ To run the browser e2e test, change directory to `playgrounds/ipfs-web3` and run
 As this in a one day exercise, we could find room for improvement in the following areas:
 
 - Publishing to NPM : Publishing the library to NPM would be the first step to make it usable by other developers.
+- CI Testing : Settings up Github actions workflow to automatically test the library is a good idea when open sourcing.
+- Contribution guide : Write information regarding contribution, as well as create PR template.
 - IPFS Testing : We could add more tests to make sure that all file types are supported, and that the IPFS options are working as expected.
 - Documentation and examples : While there is example and the code is well documented, We could improve even further by documenting each individual parameter of the plugin methods by using dedicated interfaces. We should also include a dedicated website with documentation and examples.
 - Marketing : This is out of scope, but an open source projects needs to be visible to be used. Tweeting about it, writing blog articles and including documentation examples in the main website would be a good way to start getting some users. Contributing examples in the Helia repository would also be a good way to get some visibility.
