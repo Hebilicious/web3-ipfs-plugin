@@ -48,7 +48,7 @@ const queryCIDStore = async () => {
   const web3 = new Web3("https://1rpc.io/sepolia")
   web3.registerPlugin(new IPFSUploadAndRegister())
   queryLoading.value = true
-  const result = await web3.IPFSUploadAndRegister.listCIDs(queryAddress.value)
+  const result = await web3.IPFSUploadAndRegister.listCIDs({ address: queryAddress.value })
   queryStatus.value = result
   queryLoading.value = false
   return result

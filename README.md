@@ -19,7 +19,7 @@ I've created another repository at https://github.com/Hebilicious/ipfs-web3 that
 - Build Library : `bun run build`
 - Add `PRIVATE_KEY` to .env file
 - Node Tests : `bun run test`
-- UI : `cd playgrounds/ipfs-web3 && bun run dev`
+- UI : `cd playgrounds/ipfs-web3 && bun run dev` (Make sure to build the library before!)
 - Browser e2e tests : `cd playgrounds/ipfs-web3 && bun run test:e2e`
 
 ## Choices
@@ -43,7 +43,7 @@ Faster and simpler to configure with the same API as jest.
 
 ### Frontend
 
-To make sure that the project works in a browser context, it's ideal to test it against a real browser. We'll use vite and vue for the simplicity and rapidity of the setup with playwright e2e tests. To run the browser project, change directory to `playgrounds/ipfs-web3` and run `bun run dev`.
+To make sure that the project works in a browser context, it's ideal to test it against a real browser. We'll use vite and vue for the simplicity and rapidity of the setup with playwright e2e tests. To run the browser project, build the library with `bun run build` then change directory to `playgrounds/ipfs-web3` and run `bun run dev`.
 
 ## Plugin and methods
 
