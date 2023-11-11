@@ -1,0 +1,7 @@
+{
+    "extends": ["@hebilicious"],
+    "rules":{
+      "no-console": "off"
+    }
+  }
+  
