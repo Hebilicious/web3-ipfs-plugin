@@ -66,8 +66,10 @@ jobs:
         run: bun run build
 
       - name: Install Playwright
-        run: cd playgrounds/ipfs-web3 && bunx playwright install 
+        working-directory: playgrounds/ipfs-web3
+        run: bunx playwright install 
       
       - name: Test e2e
-        run: cd playgrounds/ipfs-web3 && bun run test:e2e
+        working-directory: playgrounds/ipfs-web3
+        run: bun run test:e2e
         
