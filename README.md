@@ -20,7 +20,7 @@ I've created another repository at https://github.com/Hebilicious/ipfs-web3 that
 - Add `PRIVATE_KEY` to .env file
 - Node Tests : `bun run test`
 - UI : `cd playgrounds/ipfs-web3 && bun run dev` (Make sure to build the library before!)
-- Browser e2e tests : `cd playgrounds/ipfs-web3 && bun run test:e2e`
+- Browser e2e tests : `cd playgrounds/ipfs-web3 && bun run test:e2e` (make sure to have playwright browsers installed : `bunx playwright install`)
 
 ## Choices
 
@@ -93,6 +93,8 @@ We'll create a quick frontend with vite and vue.js that we'll use to test the pl
 The source code for the relevant logic can be found in `playgrounds/ipfs-web3/src/components/Dashboard.vue`.
 
 The source code for the browser e2e test can be found in `playgrounds/ipfs-web3/e2e/ipfs-web3.spec.ts`.
+
+Make sure that the playwright browsers are installed on your system : `bunx playwright install`
 
 To run the browser e2e test, change directory to `playgrounds/ipfs-web3` and run `bun run test:e2e`.
 
