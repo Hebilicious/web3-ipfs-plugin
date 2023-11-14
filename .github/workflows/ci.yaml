@@ -48,5 +48,26 @@ jobs:
       - name: Tests
         run: bun run test
 
-      - name: Test Frontend
-        run: cd playgrounds/ipfs-web3 && bunx playwright install && bun run test:e2e
+  test-browsers:
+    runs-on: ubuntu-latest
+    env:
+      PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Install
+        run: bun install
+
+      - name: Build
+        run: bun run build
+
+      - name: Install Playwright
+        run: cd playgrounds/ipfs-web3 && bunx playwright install 
+      
+      - name: Test e2e
+        run: cd playgrounds/ipfs-web3 && bun run test:e2e
+        
