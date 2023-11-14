@@ -74,8 +74,8 @@ Note that if this isn't desirable to expose that much, these methods can be made
 
 The node tests can be found in the test directory
 
-- `helia.test.ts` : Are here to test that the IPFS setup as well as vitest are working properly.
 - `e2e.test.ts` : Tests the 2 main methods of the plugin according to the exercise.
+- `helia.test.ts` : For debugging purpose, to test that the IPFS setup as well as vitest are working properly.
 
 Run the tests with `bun run test`. This will use vitest and node.js under the hood.
 
