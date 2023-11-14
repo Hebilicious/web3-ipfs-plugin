@@ -50,6 +50,8 @@ jobs:
 
   test-browsers:
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.39.0-jammy
     env:
       PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
     steps:
@@ -58,18 +60,18 @@ jobs:
       - uses: oven-sh/setup-bun@v1
         with:
           bun-version: latest
-
+      
+      - uses: setup-node@v3
+        with:
+            node-version: 21
+    
       - name: Install
         run: bun install
 
       - name: Build
         run: bun run build
-
-      - name: Install Playwright
-        working-directory: playgrounds/ipfs-web3
-        run: bunx playwright install --with-deps
       
       - name: Test e2e
         working-directory: playgrounds/ipfs-web3
-        run: bun run test:e2e
+        run: npm run test:e2e
         
