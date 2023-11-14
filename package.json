@@ -13,6 +13,8 @@
   "scripts": {
     "plugin": "node --env-file .env --import tsx/esm index.ts",
     "test": "vitest test/*.test.ts",
+    "lint": "eslint --cache",
+    "typecheck": "tsc --noEmit",
     "build": "tsup src/index.ts --format esm,cjs --dts"
   },
   "dependencies": {
