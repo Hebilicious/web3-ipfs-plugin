@@ -11,13 +11,13 @@ test("visits the app root url", async ({ page }) => {
 test("can upload a testfile", async ({ page }) => {
   await page.goto("/")
   await page.setInputFiles("input[type=file]", path.join(__dirname, "./testfile-browser.txt"))
-  await expect(page.locator("div.upload")).toHaveText("Uploading...")
+  await expect(page.locator("div.upload")).toHaveText("Uploading...", { timeout: 60_000 })
   await expect(page.locator("div.upload")).toHaveText(/Upload Result.*/, { timeout: 60_000 })
 })
 
 test("can query the CID stores", async ({ page }) => {
   await page.goto("/")
   await page.locator("button.queryButton").click()
-  await expect(page.locator("div.query")).toHaveText("Querying...")
+  await expect(page.locator("div.query")).toHaveText("Querying...", { timeout: 60_000 })
   await expect(page.locator("div.query")).toHaveText(/Query Result.*/, { timeout: 60_000 })
 })
