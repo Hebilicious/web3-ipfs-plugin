@@ -70,10 +70,15 @@ jobs:
         run: bun run build
 
       - name: Install Playwright
-        working-directory: playgrounds/ipfs-web3
-        run: bunx playwright install --with-deps
+        run: npx playwright install --with-deps
       
       - name: Test e2e
         working-directory: playgrounds/ipfs-web3
         run: npm run test:e2e
-        
+    
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
