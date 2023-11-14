@@ -7,7 +7,7 @@ import { IPFSUploadAndRegister } from "../src"
 // Make sure your private key doesn't start with 0x in your environment variables
 const privateKey = `0x${process.env.PRIVATE_KEY}`
 
-// We're using a timeout of 60s because the IPFS and blockchain operations can be slow.
+// We're using a timeout of 120s because the IPFS and blockchain operations can be slow.
 describe("IPFSUploadAndRegister E2E Tests", () => {
   let web3: Web3
   let account: Web3BaseWalletAccount
@@ -34,4 +34,4 @@ describe("IPFSUploadAndRegister E2E Tests", () => {
     const returnValues = cids.map(c => typeof c !== "string" && c.returnValues)
     expect(returnValues.length).toBeGreaterThan(0)
   })
-}, 60_000)
+}, 120_000)
